@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emma · Toronto</title>
+  <meta name="description" content="Emma — Toronto-based, working at Bree. Runner. Vegan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --cream: #fffaf4;
+      --ink: #5a4a5f;
+      --ink-soft: #8a7691;
+      --pink: #f7d6e0;
+      --pink-deep: #eebbcd;
+      --lavender: #e4ddf6;
+      --mint: #d8ecdf;
+      --peach: #ffe6d3;
+      --butter: #fdf1d7;
+      --accent: #c2849b;
+      --radius: 22px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Lora", Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 244, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(90, 74, 95, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .wordmark {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      margin-left: 26px;
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 110px 24px 90px;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(75px);
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .blob-pink   { width: 420px; height: 420px; background: var(--pink);     top: -120px; left: -100px; }
+    .blob-lav    { width: 380px; height: 380px; background: var(--lavender); top: -60px;  right: -120px; }
+    .blob-mint   { width: 360px; height: 360px; background: var(--mint);     bottom: -160px; left: 30%; }
+    .blob-peach  { width: 300px; height: 300px; background: var(--peach);    bottom: -120px; right: 8%; }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .eyebrow {
+      font-style: italic;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .badge {
+      font-size: 0.95rem;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(90, 74, 95, 0.12);
+      box-shadow: 0 2px 10px rgba(90, 74, 95, 0.06);
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 72px 0; }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin-bottom: 18px;
+    }
+
+    .section-title .flourish {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    #about p {
+      max-width: 640px;
+      font-size: 1.1rem;
+    }
+
+    #about .aside {
+      margin-top: 14px;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 1rem;
+    }
+
+    /* ---------- Cards ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .card {
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(90, 74, 95, 0.12);
+    }
+
+    .card .icon { font-size: 1.9rem; display: block; margin-bottom: 12px; }
+
+    .card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+
+    .card p { font-size: 0.97rem; color: rgba(90, 74, 95, 0.85); }
+
+    .card-pink   { background: var(--pink); }
+    .card-mint   { background: var(--mint); }
+    .card-lav    { background: var(--lavender); }
+    .card-peach  { background: var(--peach); }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 48px 24px 56px;
+      border-top: 1px solid rgba(90, 74, 95, 0.08);
+      background: linear-gradient(180deg, var(--cream), var(--butter));
+    }
+
+    footer .sign-off {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    footer .small {
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 80px 20px 64px; }
+      section { padding: 56px 0; }
+      .nav-links a { margin-left: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="wordmark" href="#">Emma</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#loves">Things I love</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="blob blob-pink"></div>
+    <div class="blob blob-lav"></div>
+    <div class="blob blob-mint"></div>
+    <div class="blob blob-peach"></div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Toronto, Canada</p>
+      <h1>Hi, I’m <em>Emma</em>.</h1>
+      <p class="lede">
+        I spend my days at Bree and my mornings running along the
+        waterfront — fueled entirely by plants.
+      </p>
+      <div class="badges">
+        <span class="badge">📍 Toronto</span>
+        <span class="badge">💼 Bree</span>
+        <span class="badge">🏃‍♀️ Runner</span>
+        <span class="badge">🌱 Vegan</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="container">
+      <h2 class="section-title">A little <span class="flourish">about me</span></h2>
+      <p>
+        I live in Toronto, where I work at
+        <a href="https://www.trybree.com" target="_blank" rel="noopener">Bree</a>.
+        When I’m not working, you’ll usually find me logging kilometres along the
+        lakeshore or hunting down the city’s best vegan brunch.
+      </p>
+      <p class="aside">Current obsessions: long Sunday runs, and anything with tahini.</p>
+    </section>
+
+    <section id="loves" class="container">
+      <h2 class="section-title">Things I <span class="flourish">love</span></h2>
+      <div class="cards">
+        <div class="card card-pink">
+          <span class="icon">🏃‍♀️</span>
+          <h3>Running</h3>
+          <p>Early mornings, lakeshore loops, and the occasional race bib. Always training for the next one.</p>
+        </div>
+        <div class="card card-mint">
+          <span class="icon">🌱</span>
+          <h3>Vegan life</h3>
+          <p>Plant-powered, always. Ask me where to find the best vegan ramen in the city.</p>
+        </div>
+        <div class="card card-lav">
+          <span class="icon">🍁</span>
+          <h3>Toronto</h3>
+          <p>Patios in summer, snowy runs in winter, and every neighbourhood in between.</p>
+        </div>
+        <div class="card card-peach">
+          <span class="icon">💼</span>
+          <h3>Bree</h3>
+          <p>By day, I’m part of the team at Bree, building better financial tools for Canadians.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="sign-off">See you on the trail. 🌷</p>
+    <p class="small">Made with 🌱 in Toronto · Emma, 2026</p>
+  </footer>
+</body>
+</html>
