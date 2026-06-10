@@ -268,6 +268,53 @@
     .card-lav    { background: var(--lavender); }
     .card-peach  { background: var(--peach); }
 
+    /* ---------- Puns ---------- */
+    .puns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .pun-group {
+      background: #fff;
+      border: 1px solid rgba(90, 74, 95, 0.1);
+      border-radius: var(--radius);
+      padding: 24px 24px 20px;
+      box-shadow: 0 6px 18px rgba(90, 74, 95, 0.06);
+    }
+
+    .pun-tag {
+      display: inline-block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .pun-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pun-group li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.98rem;
+      color: rgba(90, 74, 95, 0.9);
+    }
+
+    .pun-group li::before {
+      content: "🌷";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.85rem;
+    }
+
     /* ---------- Footer ---------- */
     footer {
       text-align: center;
@@ -302,6 +349,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#loves">Things I love</a>
+        <a href="#puns">Puns</a>
       </div>
     </div>
   </nav>
@@ -331,7 +379,8 @@
       <h1>Hi, I’m <em>Emma</em>.</h1>
       <p class="lede">
         I spend my days at Bree and my mornings running along the
-        waterfront — fueled entirely by plants.
+        waterfront — fueled entirely by plants. I like to think I’m
+        grate at all three.
       </p>
       <div class="badges">
         <span class="badge">📍 Toronto</span>
@@ -347,11 +396,13 @@
       <h2 class="section-title">A little <span class="flourish">about me</span></h2>
       <p>
         I live in Toronto, where I work at
-        <a href="https://www.trybree.com" target="_blank" rel="noopener">Bree</a>.
+        <a href="https://www.trybree.com" target="_blank" rel="noopener">Bree</a> —
+        a job I’m totally cheesed about (it just brie-ngs out the best in me).
         When I’m not working, you’ll usually find me logging kilometres along the
-        lakeshore or hunting down the city’s best vegan brunch.
+        lakeshore or hunting down the city’s best vegan brunch. I run because it’s
+        a-peeling, and because tofu what I eat, I’d better keep moving.
       </p>
-      <p class="aside">Current obsessions: long Sunday runs, and anything with tahini.</p>
+      <p class="aside">Current obsessions: long Sunday runs that go the extra mile, and anything with tahini.</p>
     </section>
 
     <section id="loves" class="container">
@@ -360,12 +411,12 @@
         <div class="card card-pink">
           <span class="icon">🏃‍♀️</span>
           <h3>Running</h3>
-          <p>Early mornings, lakeshore loops, and the occasional race bib. Always training for the next one.</p>
+          <p>Early mornings, lakeshore loops, and the occasional race bib. I’m a real go-getter — and a great go-er, too.</p>
         </div>
         <div class="card card-mint">
           <span class="icon">🌱</span>
           <h3>Vegan life</h3>
-          <p>Plant-powered, always. Ask me where to find the best vegan ramen in the city.</p>
+          <p>Plant-powered, always. I’m rooting for a better world, one kale-ndar day at a time. Lettuce be honest: it’s a-maize-ing.</p>
         </div>
         <div class="card card-lav">
           <span class="icon">🍁</span>
@@ -375,15 +426,52 @@
         <div class="card card-peach">
           <span class="icon">💼</span>
           <h3>Bree</h3>
-          <p>By day, I’m part of the team at Bree, building better financial tools for Canadians.</p>
+          <p>By day, I’m part of the team at Bree, building better financial tools for Canadians. You could say I’m the big cheese around here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="puns" class="container">
+      <h2 class="section-title">A few <span class="flourish">terrible puns</span></h2>
+      <p class="aside">Warning: served with extra cheese. 🧀</p>
+      <div class="puns">
+        <div class="pun-group">
+          <span class="pun-tag">🌱 Vegan</span>
+          <ul>
+            <li>I went vegan for the herd immunity.</li>
+            <li>Romaine calm — it’s just a salad, lettuce relax.</li>
+            <li>You can’t beet a good plant-based meal.</li>
+            <li>I’m kind of a big dill in the produce aisle.</li>
+            <li>Tofu-nny how good it tastes once you give it a chance.</li>
+          </ul>
+        </div>
+        <div class="pun-group">
+          <span class="pun-tag">🏃‍♀️ Running</span>
+          <ul>
+            <li>I run because I really like to pace myself.</li>
+            <li>My running jokes? They have great pacing.</li>
+            <li>Sore today, sore-er tomorrow — but it’s worth every stride.</li>
+            <li>I told my coach I’d give it a shoe-t.</li>
+            <li>Long runs are just me going the extra mile to avoid chores.</li>
+          </ul>
+        </div>
+        <div class="pun-group">
+          <span class="pun-tag">🧀 Bree</span>
+          <ul>
+            <li>Working at Bree is gouda for the soul.</li>
+            <li>I’m not bluffing — I really am the big cheese here.</li>
+            <li>Every project? Brie-lliant.</li>
+            <li>We don’t cut corners, we just cut the cheese… budget.</li>
+            <li>Things at Bree are really starting to brie-ng it all together.</li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p class="sign-off">See you on the trail. 🌷</p>
-    <p class="small">Made with 🌱 in Toronto · Emma, 2026</p>
+    <p class="sign-off">See you on the trail — lettuce run it back soon. 🌷</p>
+    <p class="small">Made with 🌱 in Toronto · Emma, 2026 · No puns were harmed in the making of this site</p>
   </footer>
 
   <script>
